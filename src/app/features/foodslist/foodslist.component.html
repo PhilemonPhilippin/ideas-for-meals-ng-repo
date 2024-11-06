@@ -1,0 +1,9 @@
+<h2>Foods list</h2>
+<p>Here come the foods :</p>
+<ul>
+  @for (food of foods$ | async; track food) {
+  <li>{{ food }}</li>
+  } @empty {
+  <li>Loading...</li>
+  }
+</ul>
