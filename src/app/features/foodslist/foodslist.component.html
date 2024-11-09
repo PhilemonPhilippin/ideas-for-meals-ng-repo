@@ -1,9 +1,11 @@
 <h2>Foods list</h2>
 <p>Here come the foods :</p>
-<ul>
-  @for (food of foods$ | async; track food) {
-  <li>{{ food }}</li>
+
+  @for (food of foods$ | async; track food.id) {
+    <div class="food-card">
+      <h3>{{ food.name }}</h3>
+      <span>{{ food.foodGroup.name }}</span>
+    </div>
   } @empty {
-  <li>Loading...</li>
+  <p>Loading...</p>
   }
-</ul>
