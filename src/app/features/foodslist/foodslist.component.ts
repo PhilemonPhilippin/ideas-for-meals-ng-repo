@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { FoodService } from '../../shared/services/food.service';
 import { Observable } from 'rxjs';
@@ -11,7 +11,7 @@ import { Food } from '../../shared/models/food';
   templateUrl: './foodslist.component.html',
   styleUrl: './foodslist.component.css',
 })
-export class FoodslistComponent {
+export class FoodslistComponent implements OnInit {
   foods$!: Observable<Food[]>;
 
   constructor(private foodService: FoodService) {}

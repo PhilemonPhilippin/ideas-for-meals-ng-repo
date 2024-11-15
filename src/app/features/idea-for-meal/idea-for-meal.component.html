@@ -1,0 +1,9 @@
+<h2>Idea for meal :</h2>
+@if (ideaForMeal$ | async; as ideaForMeal) {
+<p>Carbohydrate : {{ ideaForMeal.carbohydrate }}</p>
+<p>Protein : {{ ideaForMeal.protein }}</p>
+<p>Vegetable : {{ ideaForMeal.vegetable }}</p>
+<p>Fruit : {{ ideaForMeal.fruit }}</p>
+} @else {
+<p>Loading...</p>
+}
