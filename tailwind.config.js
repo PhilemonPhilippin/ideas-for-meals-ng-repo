@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        garamond: ["EB Garamond", "serif"],
+        helvetica: ["Helvetica", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
