@@ -14,3 +14,10 @@
   --dark-grey: #b3b3b3;
   --light-red: #ea9e8d;
 }
+
+.hr {
+  position: relative;
+  left: 10%;
+  width: 80%;
+  height: 1.5px;
+}

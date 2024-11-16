@@ -1,9 +1,12 @@
-<h2>Here is your current diet :</h2>
-@for (food of diet$ | async; track food.id) {
-<div class="food-card">
-  <h3>{{ food.name }}</h3>
-  <p>{{ food.foodGroup.name }}</p>
+<h2 class="font-bold text-2xl mx-3 mb-3">Current diet</h2>
+<div class="grid grid-cols-4 gap-4 mx-3">
+  @for (food of diet$ | async; track food.id) {
+  <div class="rounded shadow-lg max-w-sm bg-dark-blue text-center p-2">
+    <h3 class="font-bold text-xl p-1">{{ food.name }}</h3>
+    <div class="hr bg-[#343434]"></div>
+    <p class="text-sm p-1">{{ food.foodGroup.name }}</p>
+  </div>
+  } @empty {
+  <p>Loading...</p>
+  }
 </div>
-} @empty {
-<p>Loading...</p>
-}
