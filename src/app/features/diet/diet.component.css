@@ -1,0 +1,9 @@
+.food-card {
+  border: solid 3px var(--dark-blue);
+}
+
+.selected-food {
+  background-color: #eaeaea;
+  color: black;
+  border-color: red;
+}

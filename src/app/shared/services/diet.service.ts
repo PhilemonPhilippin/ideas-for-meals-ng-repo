@@ -13,4 +13,9 @@ export class DietService {
     const uri = 'https://localhost:7273/api/diet';
     return this.http.get<Food[]>(uri);
   }
+
+  removeFromDiet(foods: string[]): Observable<unknown> {
+    const uri = 'https://localhost:7273/api/diet/out';
+    return this.http.put(uri, foods);
+  }
 }

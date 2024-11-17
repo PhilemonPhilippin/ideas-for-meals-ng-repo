@@ -1,12 +1,30 @@
-<h2 class="font-bold text-2xl mx-3 mb-3">Current diet</h2>
-<div class="grid grid-cols-4 gap-4 mx-3">
-  @for (food of diet$ | async; track food.id) {
-  <div class="rounded shadow-lg max-w-sm bg-dark-blue text-center p-2">
-    <h3 class="font-bold text-xl p-1">{{ food.name }}</h3>
-    <div class="hr bg-[#343434]"></div>
-    <p class="text-sm p-1">{{ food.foodGroup.name }}</p>
+<div class="diet">
+  <h1 class="font-bold text-3xl mx-3 mb-3">Current diet</h1>
+  <p class="mx-3">
+    Select any number of foods you want to remove of your diet.
+  </p>
+  <p class="mx-3 mb-3">
+    Then you can go at the bottom of the page to press the button to confirm.
+  </p>
+  <div class="grid grid-cols-4 gap-4 mx-3 mb-3">
+    @for (food of diet$ | async; track food.id) {
+    <div
+      class="food-card rounded shadow-lg max-w-sm bg-dark-blue text-center p-2"
+      (click)="toggleFood($event)"
+      [attr.data-food-id]="food.id"
+    >
+      <h3 class="font-bold text-xl p-1">{{ food.name }}</h3>
+      <div class="hr bg-[#343434]"></div>
+      <p class="text-sm p-1">{{ food.foodGroup.name }}</p>
+    </div>
+    } @empty {
+    <p>Loading...</p>
+    }
   </div>
-  } @empty {
-  <p>Loading...</p>
-  }
+  <button
+    (click)="removeFromDiet()"
+    class="mx-3 bg-red-500 hover:bg-red-700 font-bold py-2 px-4 rounded"
+  >
+    Remove from diet
+  </button>
 </div>
