@@ -16,12 +16,13 @@ export class DietService {
   }
 
   removeFromDiet(foods: string[]): Observable<unknown> {
-    const uri = 'https://localhost:7273/api/diet/out';
-    return this.http.put(uri, foods);
+    const uri = 'https://localhost:7273/api/diet';
+    const options = { body: foods };
+    return this.http.delete(uri, options);
   }
 
   addToDiet(food: AddFoodRequest): Observable<unknown> {
-    const uri = 'https://localhost:7273/api/diet/in';
+    const uri = 'https://localhost:7273/api/diet';
     return this.http.post(uri, food);
   }
 }
