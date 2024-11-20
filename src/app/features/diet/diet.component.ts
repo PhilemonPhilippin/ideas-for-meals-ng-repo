@@ -1,13 +1,14 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Observable, switchMap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Food } from '../../shared/models/food';
 import { DietService } from '../../shared/services/diet.service';
+import { AddFoodComponent } from './add-food/add-food.component';
 
 @Component({
   selector: 'app-diet',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, AddFoodComponent],
   templateUrl: './diet.component.html',
   styleUrl: './diet.component.css',
 })
@@ -29,6 +30,10 @@ export class DietComponent implements OnInit {
         this.selectedFoods.splice(index, 1);
       }
     }
+  }
+
+  refreshOnAdding(): void {
+    this.fetchDiet();
   }
 
   fetchDiet(): void {

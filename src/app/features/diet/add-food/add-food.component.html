@@ -1,0 +1,29 @@
+<div class="add-food mb-3 font-helvetica">
+  <form [formGroup]="foodForm" (ngSubmit)="onSubmit()">
+    <label for="name" class="block">Name: </label>
+    <input
+      id="name"
+      type="text"
+      formControlName="foodName"
+      class="text-black px-1 block mb-1"
+    />
+    <label for="food-group" class="block">Group: </label>
+    <select
+      name="food-group"
+      id="food-group"
+      class="mb-2 text-black"
+      formControlName="foodGroup"
+    >
+      <option selected="true" disabled="disabled">Select group</option>
+      @for (group of foodGroups$ | async; track group.id) {
+      <option [value]="group.id">{{ group.name }}</option>
+      }
+    </select>
+    <button
+      type="submit"
+      class="block bg-light-blue hover:bg-green-500 font-bold py-2 px-4 rounded text-sm"
+    >
+      Add
+    </button>
+  </form>
+</div>
