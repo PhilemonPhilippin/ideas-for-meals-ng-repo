@@ -1,25 +1,31 @@
-<div class="idea-for-meal">
+<div class="idea-for-meal font-helvetica">
   <h2 class="text-xl mb-2">Idea for meal</h2>
-  @if (ideaForMeal$ | async; as ideaForMeal) {
-  <table class="table-auto">
-    <tr>
-      <th>Carbs</th>
+  @if (ideaForMeal) {
+  <table class="table-auto mb-2">
+    <tr (click)="toggleFood($event)" data-food-group="carbohydrate">
+      <th>Carbs :</th>
       <td>{{ ideaForMeal.carbohydrate }}</td>
     </tr>
-    <tr>
-      <th>Proteins</th>
+    <tr (click)="toggleFood($event)" data-food-group="protein">
+      <th>Proteins :</th>
       <td>{{ ideaForMeal.protein }}</td>
     </tr>
-    <tr>
-      <th>Veggies</th>
+    <tr (click)="toggleFood($event)" data-food-group="vegetable">
+      <th>Veggies :</th>
       <td>{{ ideaForMeal.vegetable }}</td>
     </tr>
-    <tr>
-      <th>Dessert</th>
+    <tr (click)="toggleFood($event)" data-food-group="fruit">
+      <th>Dessert :</th>
       <td>{{ ideaForMeal.fruit }}</td>
     </tr>
   </table>
   } @else {
   <p>Loading...</p>
   }
+  <button
+    class="block bg-light-blue hover:bg-green-500 font-bold py-2 px-4 rounded text-sm"
+    (click)="generateNewIdea()"
+  >
+    Generate new idea
+  </button>
 </div>

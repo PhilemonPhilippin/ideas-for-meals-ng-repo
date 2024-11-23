@@ -3,9 +3,13 @@ tr {
   border: solid 3px;
 }
 tr:hover {
-  background-color: var(--light-blue);
+  background-color: rgb(34, 197, 94);
 }
 th,
 td {
   padding: 15px;
+}
+
+.selected-food {
+  background-color: rgb(34, 197, 94);
 }
