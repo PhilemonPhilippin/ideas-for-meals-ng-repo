@@ -1,0 +1,11 @@
+tr {
+  border-color: white;
+  border: solid 3px;
+}
+tr:hover {
+  background-color: var(--light-blue);
+}
+th,
+td {
+  padding: 15px;
+}

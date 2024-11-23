@@ -1,12 +1,12 @@
 <div class="diet mx-3">
   <h1 class="font-bold text-3xl mb-3">Current diet</h1>
-  <h2 class="text-xl mb-3">Adding foods to your diet</h2>
-  <p class="mb-3">Here you will be able to add foods to your diet.</p>
+  <h2 class="text-xl mb-3">Adding foods</h2>
+  <p class="mb-3">Add food to your diet by completing the following form.</p>
   <app-add-food (onAdding)="refreshOnAdding()" />
-  <h2 class="text-xl mb-3">Removing foods from your diet</h2>
+  <h2 class="text-xl mb-3">Removing foods</h2>
   <p>Select any number of foods you want to remove of your diet.</p>
   <p class="mb-3">
-    Then you can go at the bottom of the page to press the button to confirm.
+    Then you can go at the bottom of the page and press the button to confirm.
   </p>
   <div class="grid grid-cols-4 gap-4 mb-3">
     @for (food of diet$ | async; track food.id) {
