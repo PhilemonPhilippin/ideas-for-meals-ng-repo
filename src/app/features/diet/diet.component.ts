@@ -4,11 +4,12 @@ import { Observable } from 'rxjs';
 import { Food } from '../../shared/models/food';
 import { DietService } from '../../shared/services/diet.service';
 import { AddFoodComponent } from './add-food/add-food.component';
+import { UserCheckComponent } from "../../shared/components/user-check/user-check.component";
 
 @Component({
   selector: 'app-diet',
   standalone: true,
-  imports: [AsyncPipe, AddFoodComponent],
+  imports: [AsyncPipe, AddFoodComponent, UserCheckComponent],
   templateUrl: './diet.component.html',
   styleUrl: './diet.component.css',
 })
