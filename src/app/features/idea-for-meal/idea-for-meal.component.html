@@ -1,7 +1,7 @@
-<div class="idea-for-meal font-helvetica mb-3">
-  <h2 class="text-xl mb-2">Idea for meal</h2>
+<div class="idea-for-meal mb-3">
+  <h2 class="text-xl mb-2 font-helvetica">Idea for meal</h2>
   @if (ideaForMeal) {
-  <table class="table-auto mb-2">
+  <table class="table-auto mb-2 font-helvetica">
     <tr (click)="toggleFood($event)" data-food-group="carbohydrate">
       <th>Carbs :</th>
       <td>{{ ideaForMeal.carbohydrate }}</td>
@@ -19,13 +19,14 @@
       <td>{{ ideaForMeal.fruit }}</td>
     </tr>
   </table>
+  <button
+    class="block bg-light-blue hover:bg-green-500 font-bold py-2 px-4 rounded text-sm font-helvetica mb-3"
+    (click)="generateNewIdea()"
+  >
+    New idea
+  </button>
+  <app-recipe-idea [ideaForMeal]="ideaForMeal"/>
   } @else {
   <p>Loading...</p>
   }
-  <button
-    class="block bg-light-blue hover:bg-green-500 font-bold py-2 px-4 rounded text-sm"
-    (click)="generateNewIdea()"
-  >
-    Generate new idea
-  </button>
 </div>

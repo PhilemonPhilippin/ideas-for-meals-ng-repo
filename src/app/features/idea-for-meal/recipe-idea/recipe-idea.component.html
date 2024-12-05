@@ -1,0 +1,13 @@
+<div class="recipe-idea">
+  <h3 class="text-lg mb-2">Preparation</h3>
+  <p class="mb-2">Press the button below to get an idea on how to prepare these ingredients, kind of a cooking recipe.</p>
+  <button
+    (click)="getRecipeIdea()" [disabled]="clicked"
+    class="block bg-light-blue hover:bg-green-500 font-bold py-2 px-4 rounded text-sm font-helvetica mb-3"
+  >
+    Recipe
+  </button>
+  @if (recipeIdea) {
+  <p>Response : {{ recipeIdea.content }}</p>
+  }
+</div>
