@@ -3,6 +3,7 @@ import { IdeaForMeal } from '../../shared/models/idea-for-meal';
 import { IdeaForMealService } from '../../shared/services/idea-for-meal.service';
 import { RecipeIdeaComponent } from "./recipe-idea/recipe-idea.component";
 
+
 @Component({
   selector: 'app-idea-for-meal',
   standalone: true,

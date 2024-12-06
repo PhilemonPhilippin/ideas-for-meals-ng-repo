@@ -1,12 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { IdeaForMealService } from '../../../shared/services/idea-for-meal.service';
+import { RecipeDownloadComponent } from './recipe-download/recipe-download.component';
 import { Recipe } from '../../../shared/models/recipe';
 import { IdeaForMeal } from '../../../shared/models/idea-for-meal';
 
 @Component({
   selector: 'app-recipe-idea',
   standalone: true,
-  imports: [],
+  imports: [RecipeDownloadComponent],
   templateUrl: './recipe-idea.component.html',
   styleUrl: './recipe-idea.component.css',
 })

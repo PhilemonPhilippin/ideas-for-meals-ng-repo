@@ -23,4 +23,9 @@ export class IdeaForMealService {
     const uri = 'https://localhost:7273/api/ideasformeals/recipe';
     return this.http.post<Recipe>(uri, [carbohydrate, protein, vegetable]);
   }
+
+  downloadRecipe(recipe: Recipe): Observable<Blob> {
+    const uri = 'https://localhost:7273/api/ideasformeals/recipe/pdf';
+    return this.http.post(uri, recipe, { responseType: 'blob' });
+  }
 }
