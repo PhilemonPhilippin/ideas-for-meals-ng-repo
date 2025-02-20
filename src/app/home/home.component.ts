@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IdeaForMealComponent } from '../features/idea-for-meal/idea-for-meal.component';
-import { UserProfileComponent } from '../shared/components/user-profile.component';
 import { UserCheckComponent } from '../shared/components/user-check/user-check.component';
 import { AuthService } from '@auth0/auth0-angular';
 import { AsyncPipe } from '@angular/common';
@@ -10,7 +9,6 @@ import { AsyncPipe } from '@angular/common';
   standalone: true,
   imports: [
     IdeaForMealComponent,
-    UserProfileComponent,
     AsyncPipe,
     UserCheckComponent,
   ],
