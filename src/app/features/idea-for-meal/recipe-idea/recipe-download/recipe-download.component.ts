@@ -20,6 +20,7 @@ export class RecipeDownloadComponent {
         const url = window.URL.createObjectURL(response);
         const a = document.createElement('a');
         a.href = url;
+        a.target = "_blank";
         a.download = 'recipe.pdf';
         document.body.appendChild(a);
         a.click();
